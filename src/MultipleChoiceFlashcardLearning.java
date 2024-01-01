@@ -28,46 +28,15 @@ public class MultipleChoiceFlashcardLearning extends LearningSessionImpl {
             if (userChoice == mcCard.getCorrectChoiceIndex() + 1) {
                 System.out.println("Richtig!\n");
                 statistics.incrementCorrectAnswers();
-            } else {
-                System.out.println("Falsch. Die richtige Antwort ist: " + mcCard.getChoices().get(mcCard.getCorrectChoiceIndex()) + "\n");
-                statistics.incrementIncorrectAnswers();
-            }
-
-        } if (currentCard instanceof MultipleChoiceFlashcard) {
-            // ... bestehender Code
-
-            // Überprüfen der Benutzerantwort
-            if (userChoice == mcCard.getCorrectChoiceIndex() + 1) {
-                System.out.println("Richtig!\n");
-                statistics.incrementCorrectAnswers();
                 statistics.incrementMCCorrectAnswers(); // Neue Statistik für Multiple-Choice
             } else {
                 System.out.println("Falsch. Die richtige Antwort ist: " + mcCard.getChoices().get(mcCard.getCorrectChoiceIndex()) + "\n");
                 statistics.incrementIncorrectAnswers();
                 statistics.incrementMCIncorrectAnswers(); // Neue Statistik für Multiple-Choice
             }
-            // Überprüfen der Benutzerantwort
-            if (userChoice == mcCard.getCorrectChoiceIndex() + 1) {
-                System.out.println("Richtig!\n");
-                statistics.incrementCorrectAnswers();
-                statistics.incrementMCCorrectAnswers(); // Neue Statistik für Multiple-Choice
-            } else {
-                System.out.println("Falsch. Die richtige Antwort ist: " + mcCard.getChoices().get(mcCard.getCorrectChoiceIndex()) + "\n");
-                statistics.incrementIncorrectAnswers();
-                statistics.incrementMCIncorrectAnswers(); // Neue Statistik für Multiple-Choice
-            }
-        }
-        else {
+        } else {
             // Behandlung regulärer Fragen
             super.askQuestion();
         }
-    }
-    @Override
-    protected void displayStatistics() {
-        super.displayStatistics(); // Zeige allgemeine Statistiken
-
-        // Zeige spezifische Statistiken für Multiple-Choice-Fragen
-        System.out.println("Korrekte Antworten (Multiple-Choice): " + statistics.getMCCorrectAnswers());
-        System.out.println("Inkorrekte Antworten (Multiple-Choice): " + statistics.getMCIncorrectAnswers());
     }
 }

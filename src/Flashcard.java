@@ -11,6 +11,9 @@ public class Flashcard implements Serializable {
         this.category = category;
     }
 
+    public Flashcard(String part, String part1) {
+    }
+
     public String getQuestion() {
         return question;
     }
