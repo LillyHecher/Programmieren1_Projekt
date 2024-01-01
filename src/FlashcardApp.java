@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.List;
 
 public class FlashcardApp {
     private static Scanner scanner = new Scanner(System.in);
@@ -60,18 +61,67 @@ public class FlashcardApp {
     }
 
     private static void displayFlashcards() {
-        // Implementierung wie zuvor
+        System.out.println("\nAlle Karteikarten im Deck:");
+        for (Flashcard card : deck.getCards()) {
+            System.out.println(card);
+        }
     }
 
     private static void addFlashcard() {
-        // Implementierung wie zuvor
+        System.out.print("Geben Sie die Frage ein: ");
+        scanner.nextLine(); // Verbraucht das newline-Zeichen nach der vorherigen Zahleneingabe
+        String question = scanner.nextLine();
+
+        System.out.print("Geben Sie die Antwort ein: ");
+        String answer = scanner.nextLine();
+
+        deck.addCard(new Flashcard(question, answer));
+        System.out.println("Die Karteikarte wurde hinzugefügt.");
     }
 
     private static void startLearning() {
-        // Implementierung wie zuvor
+        List<Flashcard> allCards = deck.getCards();
+        if (allCards.isEmpty()) {
+            System.out.println("Es sind keine Karteikarten im Deck vorhanden. Fügen Sie Karteikarten hinzu, um zu lernen.");
+            return;
+        }
+
+        System.out.println("Willkommen zum Karteikarten-Lernen!");
+
+        // Mischen der Karteikarten im Deck
+        deck.shuffleCards();
+
+        // Erstellen der passenden Lerninstanz (Multiple Choice oder normale Fragen)
+        LearningSessionImpl learningInstance = new LearningSessionImpl(allCards);
+
+        /*if (containsMultipleChoiceFlashcards(allCards)) {
+            learningInstance = new MultipleChoiceFlashcardLearning(allCards);
+        } else {
+            learningInstance = new LearningSessionImpl(allCards);
+        }
+        */
+
+
+        // Starten des Lernens
+        learningInstance.startLearning(deck);
+    }
+
+
+
+    private static boolean containsMultipleChoiceFlashcards(List<Flashcard> cards) {
+        for (Flashcard card : cards) {
+            if (card instanceof MultipleChoiceFlashcard) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static void displayStatistics() {
-        // Implementierung wie zuvor
+        if (flashcardLearning != null) {
+            flashcardLearning.displayStatistics();
+        } else {
+            System.out.println("Sie müssen zuerst mit dem Lernen beginnen, um Statistiken anzuzeigen.");
+        }
     }
 }

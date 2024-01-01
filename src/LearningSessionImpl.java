@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public abstract class LearningSessionImpl {
+public class LearningSessionImpl {
     protected List<Flashcard> cards;
     protected Iterator<Flashcard> iterator;
     protected Flashcard currentCard;
@@ -31,7 +31,7 @@ public abstract class LearningSessionImpl {
 
     }
 
-    private void displayStatistics() {
+    public void displayStatistics() {
         System.out.println("Lernstatistiken:");
         System.out.println("Gesamtanzahl Fragen: " + statistics.getTotalQuestions());
         System.out.println("Korrekte Antworten: " + statistics.getCorrectAnswers());
