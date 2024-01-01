@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1af23564-9948-4c62-a513-e2255055c64a" name="Changes" comment="lets get this started">
+    <list default="true" id="1af23564-9948-4c62-a513-e2255055c64a" name="Changes" comment="v2 - läuft soweit / kein GUI">
+      <change afterPath="$PROJECT_DIR$/src/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FlashcardApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FlashcardApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LearningSessionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LearningSessionImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +57,20 @@
       <option name="project" value="LOCAL" />
       <updated>1703879397913</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v2 - läuft soweit / kein GUI">
+      <option name="closed" value="true" />
+      <created>1704114642475</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704114642475</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lets get this started" />
-    <option name="LAST_COMMIT_MESSAGE" value="lets get this started" />
+    <MESSAGE value="v2 - läuft soweit / kein GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2 - läuft soweit / kein GUI" />
   </component>
 </project>
