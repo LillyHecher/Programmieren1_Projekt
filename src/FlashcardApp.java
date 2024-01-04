@@ -1,3 +1,5 @@
+import jdk.jfr.Category;
+
 import java.util.Scanner;
 import java.util.List;
 
@@ -68,16 +70,25 @@ public class FlashcardApp {
     }
 
     private static void addFlashcard() {
-        System.out.print("Geben Sie die Frage ein: ");
         scanner.nextLine(); // Verbraucht das newline-Zeichen nach der vorherigen Zahleneingabe
+
+        System.out.print("Geben Sie die Frage ein: ");
         String question = scanner.nextLine();
 
         System.out.print("Geben Sie die Antwort ein: ");
         String answer = scanner.nextLine();
+        System.out.println("Geben Sie eine Kategorie ein");
+        String category1 = scanner.nextLine();
 
-        deck.addCard(new Flashcard(question, answer));
+        // Beispiel: Hier erstellen oder initialisieren Sie Ihre FlashcardCategory-Instanz
+        FlashcardCategory category = new FlashcardCategory(category1);
+
+        deck.addCard(new Flashcard(question, answer, category));
         System.out.println("Die Karteikarte wurde hinzugefügt.");
     }
+
+
+
 
     private static void startLearning() {
         List<Flashcard> allCards = deck.getCards();

@@ -13,24 +13,34 @@ public class Flashcard implements Serializable {
 
     public Flashcard(String part, String part1) {
     }
+    @Override
+    public String toString() {
+        return "Frage: " + question + "\nAntwort: " + answer;
+    }
+
 
     public String getQuestion() {
+
         return question;
     }
 
     public String getAnswer() {
+
         return answer;
     }
 
     public void setAnswer(String answer) {
+
         this.answer = answer;
     }
 
     public FlashcardCategory getCategory() {
+
         return category;
     }
 
     public void setCategory(FlashcardCategory category) {
+
         this.category = category;
     }
 }

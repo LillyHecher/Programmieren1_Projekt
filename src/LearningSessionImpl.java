@@ -28,6 +28,22 @@ public class LearningSessionImpl {
     }
 
     protected void askQuestion() {
+        System.out.println("Frage: " + currentCard.getQuestion());
+
+        // Hier können Sie die Benutzerantwort abfragen
+        System.out.print("Ihre Antwort: ");
+        String userAnswer = scanner.nextLine();
+
+        // Überprüfen, ob die Antwort korrekt ist
+        if (userAnswer.equalsIgnoreCase(currentCard.getAnswer())) {
+            System.out.println("Richtig!");
+            statistics.incrementCorrectAnswers();
+        } else {
+            System.out.println("Falsch. Die richtige Antwort ist: " + currentCard.getAnswer());
+            statistics.incrementIncorrectAnswers();
+        }
+
+        statistics.incrementTotalQuestions();
 
     }
 
